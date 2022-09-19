@@ -4,13 +4,15 @@ visualizing lidar data for youtube video
 
 #%%
 # Import packages
-import numpy as np  # Laspy is a python library for reading, modifying and creating LAS LiDAR files.
-import laspy  # Open3D is an open-source library that supports rapid development of software that deals with 3D data
-import open3d as o3d  # NumPy is the fundamental package for scientific computing in Python.
+import laspy
+import open3d as o3d
+import numpy as np
+
+
 
 #%%
 # import lidar .las data and assign to variable
-las = laspy.read('lidar/las_data/points1.las')
+las = laspy.read('points1.las')
 
 #%%
 # examine the available features for the lidar file we have read
@@ -32,3 +34,5 @@ geom.points = o3d.utility.Vector3dVector(point_data)
 o3d.visualization.draw_geometries([geom])
 
 
+
+# %%
